@@ -2,500 +2,236 @@
 
 ## 🚀 Project Introduction
 
-This plugin provides **OCR functionality from 14 major mainstream AI
-service providers** for **Umi-OCR**, supporting both cloud and local AI
-visual recognition APIs. As a powerful supplement to offline OCR, it
-delivers higher accuracy and broader language support for intelligent
-text recognition.
+This plugin provides OCR functionality from **14 major AI service providers** for Umi-OCR, supporting both cloud-based and local AI visual recognition APIs.
 
-------------------------------------------------------------------------
+As a powerful supplement to offline OCR, it delivers higher accuracy and broader language support for intelligent text recognition.
+
+---
 
 ## 📋 About Umi-OCR
 
-**Umi-OCR** is a free, open-source, batch-capable offline OCR software
-built on PaddleOCR. It has the following features:
-
-GitHub stars \| License \| Python \| Multi-AI
-
--   🆓 Completely Free: No payment required, no ads, open-source
-    software\
--   📱 User-Friendly Interface: Modern graphical interface, simple and
-    intuitive\
--   🔄 Batch Processing: Supports batch image OCR to improve efficiency\
--   🌐 Multi-language Support: Supports Chinese, English, Japanese,
-    Korean, and more\
--   🔌 Plugin System: Supports extension plugins with customizable
-    functionality\
--   💻 Cross-platform: Supports Windows, Linux, and other operating
-    systems
-
-------------------------------------------------------------------------
-
-# 🌟 Supported AI Service Providers
-
-## 🌐 Cloud Providers
-
-  ---------------------------------------------------------------------------------------
-  Provider             Recommended Model                               Features
-  -------------------- ----------------------------------------------- ------------------
-  SiliconFlow          Qwen/Qwen3-VL-235B-A22B-Instruct (recommended)  Many open-source
-                       or Qwen/Qwen2.5-VL-72B-Instruct                 models, low cost,
-                                                                       fast speed,
-                                                                       extremely high
-                                                                       accuracy, **most
-                                                                       recommended**
-
-  Alibaba Bailian      Qwen/Qwen3-VL-235B-A22B-Instruct                Top-tier OCR
-                                                                       model, excellent
-                                                                       Chinese
-                                                                       recognition,
-                                                                       **most
-                                                                       recommended**
-
-  ZhipuAI              glm-4.5v                                        Domestic large
-                                                                       model, strong
-                                                                       multimodal
-                                                                       capability
-
-  Doubao               doubao-seed-1-6-vision-250815                   Optimized for
-                                                                       Chinese, high
-                                                                       cost-performance
-
-  OpenAI               gpt-5-mini                                      High accuracy,
-                                                                       multilingual
-                                                                       support
+Umi-OCR is a free, open-source, batch-capable offline OCR software built on PaddleOCR.
 
-  Google Gemini        gemini-3.0-flash                                Fast speed, low
-                                                                       cost
+### Key Features
 
-  xAI Grok             grok-4                                          Innovative model
-                                                                       with unique
-                                                                       advantages
+- 🆓 Completely free (no ads, open-source)
+- 📱 Modern, user-friendly interface
+- 🔄 Batch image OCR processing
+- 🌐 Multi-language support
+- 🔌 Plugin system (extendable)
+- 💻 Cross-platform (Windows, Linux)
 
-  OpenRouter           qwen/qwen2.5-vl-72b-instruct:free               Unified interface,
-                                                                       rich model
-                                                                       selection
+---
 
-  Groq                 meta-llama/llama-4-maverick-17b-128e-instruct   High-performance
-                                                                       inference,
-                                                                       extremely fast
+## 🌟 Supported AI Providers
 
-  ModelScope           Qwen/Qwen3-VL-235B-A22B-Instruct                Alibaba DAMO
-                                                                       open-source
-                                                                       platform, rich
-                                                                       models, free usage
+### 🌐 Cloud Providers
 
-  Infinigence          Qwen/Qwen3-VL-235B-A22B-Instruct                Top-tier OCR
-                                                                       model, excellent
-                                                                       Chinese
-                                                                       recognition, free
-                                                                       usage
+| Provider | Recommended Model | Highlights |
+|-----------|-------------------|------------|
+| SiliconFlow | Qwen3-VL-235B-A22B-Instruct | Low cost, fast, extremely high accuracy |
+| Alibaba Bailian | Qwen3-VL-235B-A22B-Instruct | Excellent Chinese OCR |
+| ZhipuAI | glm-4.5v | Strong multimodal capabilities |
+| Doubao | doubao-seed-1-6-vision | Optimized for Chinese |
+| OpenAI | gpt-5-mini | High precision, multilingual |
+| Google Gemini | gemini-3.0-flash | Fast and cost-efficient |
+| xAI Grok | grok-4 | Advanced multimodal model |
+| OpenRouter | qwen2.5-vl-72b-instruct | Unified API gateway |
+| Groq | llama-4-maverick-17b | Ultra-fast inference |
+| ModelScope | Qwen3-VL | Rich open model ecosystem |
+| Infinigence | Qwen3-VL | Strong Chinese OCR |
+| Mistral AI | mistral-ocr-latest | High-quality vision model |
+| Intern | internvl3.5 | Academic multimodal platform |
+| PaddleOCR Series | V3 / V5 / VL | Efficient structured document parsing |
 
-  Mistral AI           mistral-ocr-latest                              European AI
-                                                                       company, strong
-                                                                       vision models,
-                                                                       free usage
+---
 
-  Intern               internvl3.5-241b-a28b                           Academic AI
-                                                                       platform, strong
-                                                                       multimodal
-                                                                       capability, free
-                                                                       usage
+### 🏠 Local Providers (Offline OCR)
 
-  PaddleOCR Series     V3/V5/VL                                        Baidu Paddle
-                                                                       platform,
-                                                                       multilingual
-                                                                       recognition,
-                                                                       efficient and
-                                                                       accurate document
-                                                                       parsing
-  ---------------------------------------------------------------------------------------
+| Provider | Recommended Model | Highlights |
+|-----------|-------------------|------------|
+| Ollama | qwen2.5vl / qwen3vl | Fully offline, privacy-first |
+| LM Studio | llava / llava-1.5 | GUI-based, OpenAI-compatible |
 
-------------------------------------------------------------------------
+### Custom API Address Support
 
-## 🏠 Local Providers (Offline Recognition)
+Ollama and LM Studio support custom API endpoints, allowing:
 
-  --------------------------------------------------------------------------
-  Provider             Recommended Model                Features
-  -------------------- -------------------------------- --------------------
-  Ollama               qwen2.5vl:7b, qwen3vl:8b         🔒 Fully offline,
-                                                        privacy protection,
-                                                        free usage, supports
-                                                        custom address
+- LAN-based AI services
+- Remote high-performance servers
+- Distributed OCR workflows
+- Flexible deployment
 
-  LM Studio            llava, llava-1.5-7b-hf           🔒 Fully offline,
-                                                        user-friendly GUI,
-                                                        OpenAI-compatible,
-                                                        supports custom
-                                                        address
-  --------------------------------------------------------------------------
+---
 
-### 💡 Custom Address Feature
+## ✨ Features
 
-Ollama and LM Studio support custom API addresses. You can:
+- 🚀 High-precision AI recognition
+- 🌍 Multi-language support (Chinese, English, Japanese, Korean, French, German, Spanish, Russian, Arabic, etc.)
+- ⚡ Multi-vendor switching
+- 📍 Optional coordinate extraction
+- 🔧 Adjustable parameters (image size, timeout, detection count)
+- 🌐 HTTP / SOCKS5 proxy support
+- 🔄 Automatic retry mechanism
+- 🚀 Concurrent batch processing
 
--   🌐 Connect to Ollama/LM Studio services on other machines within
-    your LAN\
--   ⚡ Run Umi-OCR on lower-spec hardware while connecting to a
-    high-performance AI service machine\
--   🔧 Deploy flexibly and fully utilize existing hardware resources\
--   📡 Support remote AI services for distributed OCR processing
+---
 
-------------------------------------------------------------------------
+## 📦 Installation Requirements
 
-# 📊 Recognition Comparison
+1. Umi-OCR v2.0+
+2. API key from selected AI provider
+3. Stable internet connection (for cloud models)
 
-### Settings Interface
+---
 
-Settings interface
+## 🛠 Installation
 
-### Recognition Image: "Even extremely complex handwritten information can be perfectly recognized"
+1. Download the latest release:
+   https://github.com/EatWorld/UmiOCR-AI-OCR-Plugin/releases
 
-Recognition image
+2. Extract the `AIOCR` folder into:
 
-### PaddleOCR Recognition Result --- Very Poor
+   ```
+   UmiOCR-data/plugins/
+   ```
 
-PaddleOCR recognition result, very poor
+3. Restart Umi-OCR.
 
-### WechatOCR Recognition Result --- Very Poor
+4. Select **AI OCR (Cloud)** from the OCR engine list.
 
-WechatOCR recognition result, very poor
+---
 
-### AI OCR (Model: Gemini 2.5 Flash) Recognition Result --- Nearly Perfect
+## ⚙️ Configuration
 
-AI OCR recognition result, perfect!
+### First-Time Setup
 
-image image
+1. Select **AI OCR (Cloud)**.
+2. Enter API keys and model names in Global Settings.
+3. Click **Apply Changes**.
+4. Choose recognition strategy:
 
-------------------------------------------------------------------------
+- **Dual-channel (AI High Precision + Coordinates)**  
+  Suitable for PDFs and structured documents.
 
-# ✨ Features
+- **AI High Precision Only**  
+  Outputs plain text without coordinates.
 
-  -----------------------------------------------------------------------
-  Feature                        Description
-  ------------------------------ ----------------------------------------
-  🚀 High-Accuracy Recognition   Based on the latest AI vision models,
-                                 supports multi-language text recognition
+### Recommended Parameters
 
-  🌍 Multi-language Support      Supports Chinese, English, Japanese,
-                                 Korean, French, German, Spanish,
-                                 Russian, Arabic, etc.
+- Edge padding: 2 px  
+- Max detection boxes: 30–100  
+- Concurrent tasks: 3–6  
+- Minimum box area: 0 (recommended for small text)
 
-  ⚡ Multiple Provider Options   Supports OpenAI, Gemini, xAI,
-                                 OpenRouter, SiliconFlow, Doubao, and
-                                 more
+---
 
-  📍 Coordinate Extraction       Optional output of text position
-                                 coordinate information
+### Daily Usage
 
-  🔧 Flexible Configuration      Supports adjustment of image quality,
-                                 size, timeout, and other parameters
+- Switch provider from dropdown.
+- Click **Apply Changes**.
+- No need to re-enter API keys.
 
-  🌐 Proxy Support               Supports HTTP/SOCKS5 proxy
+All settings are automatically saved.
 
-  🔄 Smart Retry                 Automatic retry mechanism to improve
-                                 recognition success rate
+---
 
-  🚀 Concurrent Processing       Supports concurrent batch image
-                                 recognition to improve efficiency
-  -----------------------------------------------------------------------
+## ⚠️ Important Notes
 
-------------------------------------------------------------------------
+- API usage is billed by providers.
+- Stable network required for cloud OCR.
+- Large images increase cost.
+- Images are sent directly to provider servers.
+- Cloud APIs may enforce rate limits.
+- Different models vary in cost and accuracy.
 
-# 📦 Installation Requirements
+### Chinese Variant Preservation
 
--   Umi-OCR software: Install Umi-OCR v2.0+\
--   AI service API key: Obtain API keys from corresponding providers\
--   Network connection: Must be able to access the AI services (overseas
-    models typically require VPN access)
+When language is set to “Auto/Chinese”:
 
-------------------------------------------------------------------------
+- No Simplified/Traditional conversion
+- No full-width/half-width conversion
+- No character normalization
+- Mixed variants remain unchanged
 
-# 🛠️ Installation Steps
+---
 
--   Download the latest plugin version from AIOCR-releases\
--   Extract the AIOCR folder into the Umi-OCR plugin directory:
+## 🏠 Local Offline Setup
 
-```{=html}
-<!-- -->
-```
-    UmiOCR-data/plugins/
+### Ollama
 
--   Restart Umi-OCR\
--   Select "AI OCR (Cloud)" in the OCR engine selection
+Install:
 
-------------------------------------------------------------------------
-
-# ⚙️ Configuration Instructions
-
-## 1. Configure the Plugin
-
-### First-time Configuration (recommended to configure all providers at once):
-
--   Select "AI OCR (Cloud)" in Umi-OCR\
--   Configure all providers you plan to use in Global Settings:
-    -   Enter OpenAI API key and model (if needed)\
-    -   Enter Gemini API key and model (if needed)\
-    -   Configure other providers (if needed)\
--   Select the current AI provider and click **Apply Changes**\
--   In Local Settings, choose "Recognition Strategy":
-    -   Dual-channel: AI high-accuracy recognition (with position):
-        Outputs text with coordinates, suitable for PDF and document
-        recognition.\
-    -   AI high-accuracy recognition only: Outputs plain text without
-        coordinates, suitable when only text is needed.\
--   Set parameters:
-    -   Edge padding: 2 px\
-    -   Maximum detection boxes: 30--100 (balance complexity and cost)\
-    -   Concurrent recognition: 3--6 (depending on machine and provider
-        rate limits)\
-    -   Minimum box area: 0 or 100--500 px² (0 recommended for small
-        text scenarios)
-
-image
-
-### Daily Use:
-
--   Simply switch the "Current AI Provider" dropdown and click **Apply
-    Changes**\
--   No need to re-enter API keys or models\
--   All configurations are saved automatically
-
-------------------------------------------------------------------------
-
-## 2. Start Recognition
-
--   Use screenshot OCR, batch OCR, and other functions\
--   The plugin will automatically call the corresponding AI API for
-    recognition
-
-------------------------------------------------------------------------
-
-# ⚠️ Notes
-
--   API Cost: AI APIs are billed by usage. Please control frequency.\
--   Network Requirement: Requires stable internet connection.\
--   Image Size: Set an appropriate maximum image size to control cost.\
--   Privacy & Security: Images are uploaded directly to provider
-    servers. The plugin author does not receive your images or data.\
--   Speed Limits: Cloud APIs may have rate limits and are not suitable
-    for excessive concurrent requests.\
--   Model Selection: Accuracy and cost vary by model. Choose based on
-    your needs.\
--   Chinese Variant Preservation: When language is set to
-    "Auto/Chinese", simplified/traditional conversion,
-    full-width/half-width conversion, and character normalization are
-    explicitly prohibited; mixed variants remain mixed; characters are
-    copied verbatim without rewriting.
-
-------------------------------------------------------------------------
-
-# 🔑 API Key Acquisition
-
-## SiliconFlow
-
--   Visit SiliconFlow\
--   Register an account and obtain API key\
--   Supports multiple open-source vision models
-
-## Doubao
-
--   Visit Volcano Engine\
--   Activate Doubao service and obtain API key\
--   ByteDance-developed multimodal model
-
-## OpenAI
-
--   Visit OpenAI Platform\
--   Log in and create API key\
--   Copy generated key
-
-## Google Gemini
-
--   Visit Google AI Studio\
--   Log in with Google account\
--   Create new API key
-
-## xAI Grok
-
--   Visit xAI Console\
--   Register and obtain API key
-
-## Alibaba Bailian
-
--   Visit Alibaba Bailian Platform\
--   Activate service and obtain API key\
--   Supports Tongyi Qwen vision models
-
-## ZhipuAI
-
--   Visit ZhipuAI Open Platform\
--   Register and create API key\
--   Domestic multimodal large model
-
-## OpenRouter
-
--   Visit OpenRouter\
--   Register and create API key
-
-## Groq
-
--   Visit Groq Console\
--   Register and obtain API key\
--   High-performance inference platform
-
-## ModelScope
-
--   Visit ModelScope Community\
--   Register and obtain Access Token\
--   Alibaba DAMO open-source AI platform
-
-## Infinigence
-
--   Visit Infinigence Platform\
--   Register and obtain API key\
--   Moonshot AI platform with strong long-text capability
-
-## Mistral AI
-
--   Visit Mistral Platform\
--   Register and create API key\
--   European AI company with strong vision models
-
-## Intern
-
--   Visit InternLM Platform\
--   Register and obtain API key\
--   Academic AI platform with strong multimodal capability
-
-## Baidu PaddleOCR
-
--   Visit PaddleOCR official site: https://aistudio.baidu.com/paddleocr\
--   Register and obtain TOKEN and API_URL for free\
--   Daily limit: 3000 pages per model per user; exceeding returns HTTP
-    429
-
-------------------------------------------------------------------------
-
-# 🏠 Local Service Installation Guide
-
-## Ollama (Fully Offline)
-
-### Install Ollama
-
-``` bash
-# Linux/macOS
+```bash
 curl -fsSL https://ollama.ai/install.sh | sh
-
-# Windows
-# Download installer from https://ollama.ai
 ```
 
-### Download Vision Models
+Download model:
 
-``` bash
-# Download llava model (recommended)
+```bash
 ollama pull llava
-
-# Or download other vision models
-ollama pull llava:7b
-ollama pull bakllava
 ```
 
-### Start Service
+Start service:
 
-``` bash
+```bash
 ollama serve
-# Service will start at http://localhost:11434
 ```
 
-### Configure in Plugin
+Plugin Configuration:
 
--   Provider: Select "Ollama (Local)"\
--   Model: Enter downloaded model name (e.g., llava)\
--   Default API address (editable): http://localhost:11434/api\
--   API key: Leave blank
+- Provider: Ollama (Local)
+- API: http://localhost:11434/api
+- API Key: Leave blank
 
-------------------------------------------------------------------------
+---
 
-## LM Studio (GUI)
+### LM Studio
 
-### Install
+1. Install from https://lmstudio.ai
+2. Download a vision model (e.g., llava-1.5-7b-hf)
+3. Start local server (default port 1234)
 
--   Visit LM Studio official website\
--   Download and install version for your system
+Plugin Configuration:
 
-### Download Models
+- Provider: LM Studio (Local)
+- API: http://localhost:1234/v1
+- API Key: blank or `not-needed`
 
--   Search and download vision-supported models inside LM Studio\
--   Recommended: llava-1.5-7b-hf, llava-1.6-34b-hf
+---
 
-### Start Local Server
+## 🔒 Advantages of Local OCR
 
--   Click "Local Server" in LM Studio\
--   Select downloaded vision model\
--   Start server (default port 1234)
+- Fully offline
+- Privacy protected
+- No API cost
+- Full control over models
 
-### Configure in Plugin
+---
 
--   Provider: Select "LM Studio (Local)"\
--   Model: Enter model name loaded in LM Studio\
--   Default API address (editable): http://localhost:1234/v1\
--   API key: Leave blank or enter "not-needed"
+## 📝 Version History
 
-------------------------------------------------------------------------
+- v2.9.1 — Added PaddleOCR-VL-1.5
+- v2.9.0 — Added PP-StructureV3
+- v2.8.0 — Added PaddleOCR-V5 and VL
+- v2.7.0 — Improved dual-channel speed and accuracy
+- v2.6.0 — Fixed alignment using dual-channel recognition
+- v2.5.0 — Added 5 new AI providers
+- v2.4.0 — Added local offline OCR support
+- v2.3.0 — Added Alibaba Bailian and ZhipuAI
+- v2.2.0 — One-time configuration for all providers
+- v2.1.0 — Added SiliconFlow and Doubao
+- v2.0.0 — Multi-provider refactor
+- v1.2.0 — Gemini 2.5 support
+- v1.1.0 — Improved multilingual handling
+- v1.0.0 — Initial release
 
-# 🔒 Advantages of Local Services
+---
 
--   Fully offline: No internet required, no data uploaded\
--   Privacy protection: All processing happens locally\
--   Free usage: No API call cost\
--   Full control: Choose and customize models
+## 💖 Support
 
-------------------------------------------------------------------------
+Head to source repo to support: https://github.com/EatWorld/UmiOCR-AI-OCR-Plugin
 
-# 📝 Version History
-
--   v2.9.1: Added PaddleOCR-VL-1.5, improved performance\
--   v2.9.0: Added PP-StructureV3 for more accurate complex layout
-    parsing. Layout recognition and Markdown beautification enabled by
-    default.\
--   v2.8.0: Added PaddleOCR-V5 and PaddleOCR-VL\
--   v2.7.0: Adjusted dual-channel strategy, improved accuracy and speed\
--   v2.6.0: 🚀 Major update --- solved large-model OCR text alignment
-    issue. Added and improved dual-channel recognition. Local PaddleOCR
-    detects real coordinates; AI model recognizes text for perfect
-    alignment. Adjustable concurrency, box limit, padding, etc. Faster
-    full-image recognition.\
--   v2.5.0: 🎉 Community update --- added 5 AI providers: Groq,
-    ModelScope, Infinigence, Mistral AI, Intern. Expanded provider
-    selection. Optimized local custom address feature.\
--   v2.4.0: 🚀 Major update --- added local offline recognition (Ollama,
-    LM Studio). Custom API address supported. Improved text alignment
-    accuracy.\
--   v2.3.0: Added Alibaba Bailian and ZhipuAI support. Updated default
-    models. Optimized UI. Removed retry count config (built-in 3
-    retries).\
--   v2.2.0: One-time configuration for all providers. No need to
-    re-enter API keys when switching.\
--   v2.1.0: Added SiliconFlow and Doubao vision models\
--   v2.0.0: Refactored into multi-provider AI OCR plugin\
--   v1.2.0: Added Gemini 2.5 Flash and Pro preview models, improved
-    recognition accuracy\
--   v1.1.0: Added multi-language support, optimized error handling\
--   v1.0.0: Initial release with Gemini OCR support
-
-------------------------------------------------------------------------
-
-# 💖 Support
-
-If this plugin helps you, please consider:
-
--   Giving the project a ⭐\
--   Sharing it with others\
--   Providing feedback and suggestions\
--   Contributing to the project
-
-------------------------------------------------------------------------
+---
 
 **Thank you for using the Umi-OCR Multi-Provider AI OCR Plugin!**
